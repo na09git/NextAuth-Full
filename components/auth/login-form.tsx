@@ -15,7 +15,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,  
+  FormMessage,
 } from "@/components/ui/form";
 import { CardWrapper } from "@/components/auth/card-wrapper"
 import { Button } from "@/components/ui/button";
@@ -46,7 +46,7 @@ export const LoginForm = () => {
   const onSubmit = (values: z.infer<typeof LoginSchema>) => {
     setError("");
     setSuccess("");
-    
+
     startTransition(() => {
       login(values, callbackUrl)
         .then((data) => {
@@ -76,7 +76,7 @@ export const LoginForm = () => {
       showSocial
     >
       <Form {...form}>
-        <form 
+        <form
           onSubmit={form.handleSubmit(onSubmit)}
           className="space-y-6"
         >
@@ -148,8 +148,8 @@ export const LoginForm = () => {
                     </FormItem>
                   )}
                 />
-            </>
-          )}
+              </>
+            )}
           </div>
           <FormError message={error || urlError} />
           <FormSuccess message={success} />
